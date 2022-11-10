@@ -8,55 +8,50 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Flex,
 } from "@chakra-ui/react";
+import { forwardRef } from "react";
 
-export default function CallToActionWithAnnotation() {
+const HeroTwo = forwardRef((props, ref) => {
   return (
     <>
-      <Container maxW={"3xl"}>
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}
-        >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"110%"}
-          >
-            Make money from <br />
-            <Text as={"span"} color={"green.400"}>
-              your audience
-            </Text>
-          </Heading>
-          <Text color={"gray.500"}>
-            Monetize your content by charging your most loyal readers and reward
-            them loyalty points. Give back to your loyal readers by granting
-            them access to your pre-releases and sneak-peaks.
-          </Text>
+      <Flex height={"100vh"} justify={"center"} align={"center"}>
+        <Container maxW={"3xl"}>
           <Stack
-            direction={"column"}
-            spacing={3}
-            align={"center"}
-            alignSelf={"center"}
-            position={"relative"}
+            as={Box}
+            textAlign={"center"}
+            spacing={{ base: 8, md: 14 }}
+            py={{ base: 20, md: 36 }}
           >
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500",
-              }}
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+              lineHeight={"110%"}
             >
-              Get Started
-            </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              Learn more
-            </Button>
-            <Box>
+              비밀을 담아주셍 <br />
+              <Text as={"span"} color={"green.400"}>
+                your audience
+              </Text>
+            </Heading>
+            <Text color={"gray.500"}>
+              항상 마음속으로만 간직한 이야기하지만 기억하고 싶었던 이야기
+              누군가 볼까 두려웠던 속마음의 이야기 이제는 비담에 담아주시면
+              됩니다. 어느 누구도 볼 수 없습니다. 오로지 당신만 볼 수 있습니다.
+            </Text>
+            <Stack
+              direction={"column"}
+              spacing={3}
+              align={"center"}
+              alignSelf={"center"}
+              position={"relative"}
+            >
+              <Button colorScheme={"purple"} rounded={"full"} px={6}>
+                비담 시작하기
+              </Button>
+              <Button variant={"link"} colorScheme={"purple"} size={"sm"}>
+                비담 알아보기
+              </Button>
+
               <Icon
                 as={Arrow}
                 color={useColorModeValue("gray.800", "gray.300")}
@@ -75,13 +70,13 @@ export default function CallToActionWithAnnotation() {
               >
                 Starting at $15/mo
               </Text>
-            </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
+        </Container>
+      </Flex>
     </>
   );
-}
+});
 
 const Arrow = createIcon({
   displayName: "Arrow",
@@ -95,3 +90,4 @@ const Arrow = createIcon({
     />
   ),
 });
+export default HeroTwo;
